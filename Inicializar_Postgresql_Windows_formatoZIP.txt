@@ -1,0 +1,63 @@
+Preparación
+Link de descarga: https://sbp.enterprisedb.com/getfile.jsp?fileid=1258650
+Descomprimir en la carpeta c:\oraclexe
+
+Inicializar la BD
+--Ubicarse en la carpeta \bin de la ruta de instalación de Postgresql:
+
+initdb.exe -D <rutaData> -U postgres -W -E UTF8 -A scram-sha-256
+Ej:
+initdb.exe -D G:\JoseCarlos\G\Intel\software\pgsql-15.4-1\data -U postgres -W -E UTF8 -A scram-sha-256
+
+Iniciar BD
+--Ubicarse en la carpeta \bin de la ruta de instalación de Postgresql:
+
+pg_ctl.exe -D <rutaData> -l logfile start
+Ej:
+pg_ctl.exe -D G:\JoseCarlos\G\Intel\software\pgsql-15.4-1\data -l logfile start
+
+Detener BD
+--Ubicarse en la carpeta \bin de la ruta de instalación de Postgresql:
+
+pg_ctl.exe -D <rutaData> -l logfile start
+Ej:
+pg_ctl.exe -D G:\JoseCarlos\G\Intel\software\pgsql-15.4-1\data -l logfile start
+
+Conectar a cliente interno PSQL 
+psql -U postgres
+
+Comandos Postgresql
+postgres-# \help
+postgres=# \l
+postgres=# create database minutos;	
+minutos-# \c minutos
+
+CREATE TABLE operador(
+  id int,
+  name varchar(50) NOT NULL
+);
+
+minutos=# \dt
+minutos=# \d operador
+minutos=# \c postgres
+
+postgres=# \q	
+
+Detener BD
+--Ubicarse en la carpeta \bin de la ruta de instalación de Postgresql:
+
+pg_ctl.exe -D <rutaData> -l logfile stop
+Ej:
+pg_ctl.exe -D G:\JoseCarlos\G\Intel\software\pgsql-15.4-1\data -l logfile stop
+
+Comandos básicos de gestión de sistema operativo
+netstat -ano
+netstat -ano | find "LISTENING"
+netstat -ano | find "5432"
+taskkill /pid
+
+
+
+5432
+
+
